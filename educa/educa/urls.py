@@ -51,6 +51,13 @@ urlpatterns = [
         '__debug__',
         include('debug_toolbar.urls')
     ),
+    path(
+        'api/',
+        include(
+                'courses.api.urls',
+                namespace='api'
+        )
+    ),
 ]
 
 if settings.DEBUG:
