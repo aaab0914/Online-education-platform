@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'daphne',
 
     # local
     'courses.apps.CoursesConfig',
@@ -45,10 +46,11 @@ INSTALLED_APPS = [
 
     # local
     'students.apps.StudentsConfig',
+    'chat.apps.ChatConfig',
 
     'debug_toolbar',
     'redisboard',
-    'rest_framework'
+    'rest_framework',
 
     # third-party
     # 'embed_video',
@@ -164,4 +166,18 @@ REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
     ]
+}
+
+ASGI_APPLICATION = 'educa.asgi.application'
+
+# ASGI_APPLICATION = 'educa.asgi.application'
+
+# 使用内存后端（开发环境，不需要 Redis）
+CHANNEL_LAYERS = {
+    'default': {
+        'BACKEND': 'channels_redis.core.RedisChannelLayer',
+        'CONFIG': {
+            'hosts': [('127.0.0.1', 6379)],
+        }
+    },
 }

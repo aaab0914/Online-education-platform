@@ -29,6 +29,7 @@
         <li>No modules yet.</li>
       {% endfor %}
     </ul>
+
   </div>
 
   <div class="module">
@@ -36,9 +37,14 @@
     {% for content in module.contents.all %}
       {% with item=content.item %}
         <h2>{{ item.title }}</h2>
-        {% item.render %}
+        {{ item.render }}
       {% endwith %}
     {% endfor %}
     {% endcache %}
   </div>
+  <h3>
+    <a href="{% url 'chat:course_chat_room' object.id %}">
+      Course chat room
+    </a>
+  </h3>
 {% endblock %}

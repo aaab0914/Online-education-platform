@@ -58,6 +58,13 @@ urlpatterns = [
                 namespace='api'
         )
     ),
+    path(
+        'chat/',
+        include(
+            'chat.urls',
+            namespace='chat'
+        )
+    ),
 ]
 
 if settings.DEBUG:

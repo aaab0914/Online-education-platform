@@ -34,3 +34,7 @@
     </script>
 </body>
 </html>
+
+{#{% if request.user.is_authenticated %}#}
+{#  <li><a href="{% url 'chat:chat_room_list' %}">Chat Rooms</a></li>#}
+{#{% endif %}#}
