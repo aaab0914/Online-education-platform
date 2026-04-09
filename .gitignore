@@ -54,3 +54,34 @@ htmlcov/
 
 # Docker 相关（如果使用）
 .dockerignore
+
+# PostgreSQL 数据目录（绝对不能上传）
+data/
+pgdata/
+*.sock
+
+# 虚拟环境
+venv/
+.venv/
+env/
+.env
+
+# Python 缓存
+__pycache__/
+*.pyc
+
+# Django 相关
+*.log
+*.sqlite3
+db.sqlite3
+/media/
+/staticfiles/
+
+# IDE
+.idea/
+.vscode/
+*.iml
+
+# 系统文件
+.DS_Store
+Thumbs.db
