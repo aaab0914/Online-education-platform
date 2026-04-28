@@ -2,82 +2,12 @@
 venv/
 env/
 .venv/
-.env/
 
 # Python 缓存
 __pycache__/
-*.pyc
-*.pyo
-*.pyd
-.Python
+*.py[cod]
 
-# 数据库文件
-*.sqlite3
-db.sqlite3
-
-# IDE 配置（PyCharm 等）
-.idea/
-.vscode/
-*.iml
-
-# 环境变量
-.env
-.env.local
-*.env
-
-# 日志文件
-*.log
-logs/
-
-# 静态文件和媒体文件（生产环境）
-staticfiles/
-media/
-*.png
-*.jpg
-*.mp4
-
-# 配置文件（如果包含敏感信息）
-local_settings.py
-settings_local.py
-
-# 临时文件
-*.tmp
-*.swp
-*.swo
-.DS_Store
-Thumbs.db
-
-# 测试覆盖率
-.coverage
-htmlcov/
-.tox/
-
-# Docker 相关（如果使用）
-.dockerignore
-
-# PostgreSQL 数据目录（绝对不能上传）
-data/
-pgdata/
-*.sock
-
-# 虚拟环境
-venv/
-.venv/
-env/
-.env
-
-# Python 缓存
-__pycache__/
-*.pyc
-
-# Django 相关
-*.log
-*.sqlite3
-db.sqlite3
-/media/
-/staticfiles/
-
-# IDE
+# IDE 配置
 .idea/
 .vscode/
 *.iml
@@ -85,3 +15,40 @@ db.sqlite3
 # 系统文件
 .DS_Store
 Thumbs.db
+
+# 环境变量 / secrets
+.env
+.env.*
+
+# 证书 / 密钥
+*.key
+*.crt
+*.pem
+educa/ssl/
+
+# 数据库
+*.sqlite3
+db.sqlite3
+
+data/
+
+# 运行时 socket
+*.sock
+
+# 日志 / 覆盖率
+*.log
+.coverage
+htmlcov/
+.pytest_cache/
+
+# 静态 / 媒体
+staticfiles/
+media/
+
+# Large archive / installer files
+*.tar
+*.tar.gz
+*.tgz
+*.zip
+*.7z
+*.rar
