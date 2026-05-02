@@ -17,14 +17,18 @@
     {% endif %}
   </h1>
   <div class="contents">
-    <h3>Subjects</h3>
+    <div class="subjects-header">
+      <a class="subjects-button {% if not subject %}selected{% endif %}" href="{% url 'course_list' %}">
+        Subjects
+      </a>
+      <a class="subjects-button all-courses-button {% if not subject %}selected{% endif %}" href="{% url 'course_list' %}">
+        All courses
+      </a>
+    </div>
     <ul id="modules">
-      <li {% if not subject %}class="selected"{% endif %}>
-        <a href="{% url "course_list" %}">All</a>
-      </li>
       {% for s in subjects %}
         <li {% if subject == s %}class="selected"{% endif %}>
-          <a href="{% url "course_list_subject" s.slug %}">
+          <a href="{% url 'course_list_subject' s.slug %}">
             {{ s.title }}
             <br>
             <span>{{ s.total_courses }} course{{ s.total_courses|pluralize }}</span>
@@ -37,12 +41,12 @@
     {% for course in courses %}
       {% with subject=course.subject %}
         <h3>
-          <a href="{% url "course_detail" course.slug %}">
+          <a href="{% url 'course_detail' course.slug %}">
             {{ course.title }}
           </a>
         </h3>
         <p>
-          <a href="{% url "course_list_subject" subject.slug %}">{{ subject }}</a>.
+          <a href="{% url 'course_list_subject' subject.slug %}">{{ subject }}</a>.
             {{ course.total_modules }} modules.
             Instructor: {{ course.owner.get_full_name }}
         </p>
